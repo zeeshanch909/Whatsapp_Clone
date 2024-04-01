@@ -1,0 +1,13 @@
+.settings-container {
+  position: absolute;
+  background-color: blueviolet;
+  height: 100%;
+  width: 30%;
+}
+
+.settings-heading {
+  background-color: rgba(9, 73, 9, 0.945);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}

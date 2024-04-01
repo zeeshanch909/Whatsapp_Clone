@@ -1,17 +1,29 @@
 import React from 'react'
-import styled from "styled-components";
+import { useState } from 'react'
+import '../styles/menu-items.css'
+import Settings from './Settings'
 
-const MenuContainer = styled.div`
-display: none;
-`
 
 const MenuItems = () => {
+  const [showSetting, setShowSetting] = useState(false)
+
+  const openSetting = () => {
+    setShowSetting(!showSetting);
+    console.log("settting Clicked!");
+  };
+
   return (
-    <MenuContainer>
-      <div>
-        <h1>menu items</h1>
+    <>
+      <div className='items-container'>
+        <ul>
+          <li>New Group</li>
+          <li>New Community</li>
+          <li onClick={openSetting}>Settings</li>
+          <li>Logout</li>
+        </ul>
       </div>
-    </MenuContainer>
+      {showSetting && <Settings />}
+    </>
   )
 }
 

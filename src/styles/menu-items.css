@@ -1,0 +1,24 @@
+.items-container {
+  position: absolute;
+  left: 165px;
+  top: 68px;
+  background-color: white;
+  width: 200px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.items-container>ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+}
+
+.items-container>ul>li {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.items-container>ul>li:hover {
+  background-color: lightgray;
+}

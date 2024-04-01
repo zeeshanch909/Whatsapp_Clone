@@ -6,7 +6,7 @@ const Container = styled.div`
 display: flex ;
 flex-direction: column;
 height: 100%;
-flex: 2;
+width: 70%;
 background: #f6f7f8;
 `;
 const ProfileHeader = styled.div`
