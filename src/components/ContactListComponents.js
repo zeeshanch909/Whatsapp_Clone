@@ -32,7 +32,7 @@ const Menu = styled(CiMenuKebab)`
   cursor: pointer; // Add cursor pointer for better UX
 `;
 
-const SearchBox = styled.div`
+export const SearchBox = styled.div`
   display: flex;
   background: #f6f6f6;
   padding: 10px;
@@ -47,7 +47,7 @@ export const SearchContainer = styled.div`
   padding: 20px 0;
 `;
 
-const SearchIcon = styled.img`
+export const SearchIcon = styled.img`
   width: 28px;
   height: 28px;
   padding-left: 10px;
@@ -100,46 +100,46 @@ const ContactInfo = styled.div`
 `;
 
 const ContactComponent = ({ userData }) => {
-    return (
-        <ContactItem>
-            <ProfileIcon src={userData.profilePic} />
-            <ContactInfo>
-                <ContactName>{userData.name}</ContactName>
-                <MessageText>{userData.lastText}</MessageText>
-            </ContactInfo>
-            <MessageText>{userData.lastTextTime}</MessageText>
-        </ContactItem>
-    );
+  return (
+    <ContactItem>
+      <ProfileIcon src={userData.profilePic} />
+      <ContactInfo>
+        <ContactName>{userData.name}</ContactName>
+        <MessageText>{userData.lastText}</MessageText>
+      </ContactInfo>
+      <MessageText>{userData.lastTextTime}</MessageText>
+    </ContactItem>
+  );
 };
 
 const ContactListComponent = () => {
-    const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-    const toggleMenu = () => {
-        setShowMenu(!showMenu);
-        // console.log("Menu Clicked!");
-    };
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+    // console.log("Menu Clicked!");
+  };
 
-    return (
-        <>
-            <Container>
-                <ProfileInfoDiv>
-                    <ProfileImage src="/profile/chadhar.png" />
-                    <Menu onClick={toggleMenu} />
-                    {showMenu && <MenuItems />}
-                </ProfileInfoDiv>
-                <SearchBox>
-                    <SearchContainer>
-                        <SearchIcon src={'/search-icon.svg'} />
-                        <SearchInput placeholder="Search or start new chat" />
-                    </SearchContainer>
-                </SearchBox>
-                {contactList.map((userData, index) => (
-                    <ContactComponent key={index} userData={userData} />
-                ))}
-            </Container>
-        </>
-    );
+  return (
+    <>
+      <Container>
+        <ProfileInfoDiv>
+          <ProfileImage src="/profile/chadhar.png" />
+          <Menu onClick={toggleMenu} />
+          {showMenu && <MenuItems setShowMenu={setShowMenu} />}
+        </ProfileInfoDiv>
+        <SearchBox>
+          <SearchContainer>
+            <SearchIcon src={'/search-icon.svg'} />
+            <SearchInput placeholder="Search or start new chat" />
+          </SearchContainer>
+        </SearchBox>
+        {contactList.map((userData, index) => (
+          <ContactComponent key={index} userData={userData} />
+        ))}
+      </Container>
+    </>
+  );
 };
 
 export default ContactListComponent;

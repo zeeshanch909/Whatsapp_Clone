@@ -4,7 +4,7 @@ import '../styles/menu-items.css'
 import Settings from './Settings'
 
 
-const MenuItems = () => {
+const MenuItems = ({ setShowMenu }) => {
   const [showSetting, setShowSetting] = useState(false)
 
   const openSetting = () => {
@@ -22,7 +22,7 @@ const MenuItems = () => {
           <li>Logout</li>
         </ul>
       </div>
-      {showSetting && <Settings />}
+      {showSetting && <Settings setShowMenu={setShowMenu} setShowSetting={setShowSetting} />}
     </>
   )
 }

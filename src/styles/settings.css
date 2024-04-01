@@ -1,6 +1,6 @@
 .settings-container {
   position: absolute;
-  background-color: blueviolet;
+  background-color: white;
   height: 100%;
   width: 30%;
 }
@@ -9,5 +9,34 @@
   background-color: rgba(9, 73, 9, 0.945);
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 45px;
+
+}
+
+.settings-items ul {
+  padding-left: 0;
+}
+
+.settings-items>ul>li {
+
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #f2f2f2;
+  background: white;
+  cursor: pointer;
+  padding: 15px 12px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.settings-items>ul>li:hover {
+  background: #f2f2f2;
+}
+
+.description img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
