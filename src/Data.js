@@ -5,6 +5,22 @@ export const contactList = [
     profilePic: "/profile/chadhar.png",
     lastText: "Hey Man",
     lastTextTime: "07:58 AM",
+    messages: [
+      {
+        id: 1,
+        messageType: "TEXT",
+        text: "hello",
+        MsgMode: "sendMsg",
+        addedOn: "12:00 PM",
+      },
+      {
+        id: 2,
+        messageType: "TEXT",
+        text: "What's up?",
+        MsgMode: "receivedMsg",
+        addedOn: "12:01 PM",
+      },
+    ]
   },
   {
     id: 2,
@@ -12,6 +28,22 @@ export const contactList = [
     profilePic: "/profile/pp1.png",
     lastText: `what going on bro`,
     lastTextTime: "03:20 PM",
+    messages: [
+      {
+        id: 1,
+        messageType: "TEXT",
+        text: "hello dude",
+        MsgMode: "sendMsg",
+        addedOn: "12:00 PM",
+      },
+      {
+        id: 2,
+        messageType: "TEXT",
+        text: "What's up? okay",
+        MsgMode: "receivedMsg",
+        addedOn: "12:01 PM",
+      },
+    ]
   },
   {
     id: 3,
@@ -19,6 +51,22 @@ export const contactList = [
     profilePic: "/profile/pp2.png",
     lastText: "baba lets go out?",
     lastTextTime: "01:30 PM",
+    messages: [
+      {
+        id: 1,
+        messageType: "TEXT",
+        text: "Zeeshan Brand",
+        MsgMode: "sendMsg",
+        addedOn: "12:00 PM",
+      },
+      {
+        id: 2,
+        messageType: "TEXT",
+        text: "Zeeshy chaudhry",
+        MsgMode: "receivedMsg",
+        addedOn: "12:01 PM",
+      },
+    ]
   },
   {
     id: 4,
@@ -26,49 +74,21 @@ export const contactList = [
     profilePic: "/profile/pp3.jpeg",
     lastText: "no broo",
     lastTextTime: "10:00 AM",
-  },
-];
-export const messagesList = [
-  {
-    id: 1,
-    messageType: "TEXT",
-    text: "hello",
-    senderID: 0,
-    addedOn: "12:00 PM",
-  },
-  {
-    id: 2,
-    messageType: "TEXT",
-    text: "What's up?",
-    senderID: 1,
-    addedOn: "12:01 PM",
-  },
-  {
-    id: 3,
-    messageType: "TEXT",
-    text: "All Good, What about you?",
-    senderID: 0,
-    addedOn: "12:00 PM",
-  },
-  {
-    id: 4,
-    messageType: "TEXT",
-    text: "I'm good as well",
-    senderID: 1,
-    addedOn: "12:00 PM",
-  },
-  {
-    id: 5,
-    messageType: "TEXT",
-    text: "Great ",
-    senderID: 0,
-    addedOn: "12:00 PM",
-  },
-  {
-    id: 5,
-    messageType: "TEXT",
-    text: "Have a good day, buddy",
-    senderID: 1,
-    addedOn: "12:00 PM",
+    messages: [
+      {
+        id: 1,
+        messageType: "TEXT",
+        text: "hello",
+        MsgMode: "sendMsg",
+        addedOn: "12:00 PM",
+      },
+      {
+        id: 2,
+        messageType: "TEXT",
+        text: "What's up?",
+        MsgMode: "receivedMsg",
+        addedOn: "12:01 PM",
+      },
+    ]
   },
 ];
