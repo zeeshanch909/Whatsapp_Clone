@@ -65,20 +65,55 @@ padding: 8px 10px;
 font-size: 19px;
 `;
 
-const ConversationComponent = () => {
-    return (<>
+// const ConversationComponent = () => {
+//     return (<>
+//         <Container>
+//             <ProfileHeader>
+//                 <ProfileImage src="/profile/chadhar.png" />
+//                 Zeeshan Chadhar
+//             </ProfileHeader>
+//             <MessageContainer>
+//                 {messagesList.map((messageData) => (
+//                     <MessageDiv isYours={messageData.senderID === 0}>
+//                         <Message isYours={messageData.senderID === 0}>{[messageData.text]} </Message>
+//                     </MessageDiv>
+//                 ))}
+//             </MessageContainer>
+//             <ChatBox>
+//                 <SearchContainer>
+//                     <EmojiImage src={"/data.svg"} />
+//                     <SearchInput placeholder="Type a message" />
+//                     <SendIcon />
+//                 </SearchContainer>
+//             </ChatBox>
+//         </Container>
+//     </>
+//     );
+// };
+// export default ConversationComponent;
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+const ConversationComponent = ({ selectedContact, messagesList }) => {
+    return (
         <Container>
-            <ProfileHeader>
-                <ProfileImage src="/profile/chadhar.png" />
-                Zeeshan Chadhar
-            </ProfileHeader>
-            <MessageContainer>
-                {messagesList.map((messageData) => (
-                    <MessageDiv isYours={messageData.senderID === 0}>
-                        <Message isYours={messageData.senderID === 0}>{[messageData.text]} </Message>
-                    </MessageDiv>
-                ))}
-            </MessageContainer>
+
+            {selectedContact && (
+                <>
+                    <ProfileHeader>
+                        <ProfileImage src={selectedContact.profilePic} />
+                        <div>{selectedContact.name}</div>
+                    </ProfileHeader>
+                    <MessageContainer>
+
+                        {messagesList.map((messageData) => (
+                            <MessageDiv isYours={messageData.senderID === selectedContact.id}>
+                                <Message isYours={messageData.senderID === selectedContact.id}>
+                                    {messageData.text}
+                                </Message>
+                            </MessageDiv>
+                        ))}
+                    </MessageContainer>
+                </>
+            )}
             <ChatBox>
                 <SearchContainer>
                     <EmojiImage src={"/data.svg"} />
@@ -87,7 +122,7 @@ const ConversationComponent = () => {
                 </SearchContainer>
             </ChatBox>
         </Container>
-    </>
     );
 };
+
 export default ConversationComponent;

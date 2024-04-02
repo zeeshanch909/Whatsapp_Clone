@@ -9,6 +9,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 100%;
   width: 30%;
+  background-color: white
 `;
 
 export const ProfileInfoDiv = styled.div`
@@ -99,47 +100,87 @@ const ContactInfo = styled.div`
   margin: 0 19px;
 `;
 
-const ContactComponent = ({ userData }) => {
-  return (
-    <ContactItem>
-      <ProfileIcon src={userData.profilePic} />
-      <ContactInfo>
-        <ContactName>{userData.name}</ContactName>
-        <MessageText>{userData.lastText}</MessageText>
-      </ContactInfo>
-      <MessageText>{userData.lastTextTime}</MessageText>
-    </ContactItem>
-  );
-};
+// const ContactComponent = ({ userData }) => {
+//   return (
+//     <ContactItem>
+//       <ProfileIcon src={userData.profilePic} />
+//       <ContactInfo>
+//         <ContactName>{userData.name}</ContactName>
+//         <MessageText>{userData.lastText}</MessageText>
+//       </ContactInfo>
+//       <MessageText>{userData.lastTextTime}</MessageText>
+//     </ContactItem>
+//   );
+// };
 
-const ContactListComponent = () => {
+// const ContactListComponent = ({ contactList, onContactClick }) => {
+//   const [showMenu, setShowMenu] = useState(false);
+
+//   const toggleMenu = () => {
+//     setShowMenu(!showMenu);
+//     // console.log("Menu Clicked!");
+//   };
+
+//   return (
+//     <>
+//       <Container>
+//         <ProfileInfoDiv>
+//           <ProfileImage src="/profile/chadhar.png" />
+//           <Menu onClick={toggleMenu} />
+//           {showMenu && <MenuItems setShowMenu={setShowMenu} />}
+//         </ProfileInfoDiv>
+//         <SearchBox>
+//           <SearchContainer>
+//             <SearchIcon src={'/search-icon.svg'} />
+//             <SearchInput placeholder="Search or start new chat" />
+//           </SearchContainer>
+//         </SearchBox>
+
+//         {contactList.map((userData, index) => (
+//           <ContactComponent key={index} userData={userData} />
+//         ))}
+//       </Container>
+//     </>
+// );
+// };
+
+// export default ContactListComponent;
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+const ContactListComponent = ({ contactList, onContactClick }) => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
-    // console.log("Menu Clicked!");
-  };
-
+    console.log("Menu Clicked!");
+  }
   return (
-    <>
-      <Container>
-        <ProfileInfoDiv>
-          <ProfileImage src="/profile/chadhar.png" />
-          <Menu onClick={toggleMenu} />
-          {showMenu && <MenuItems setShowMenu={setShowMenu} />}
-        </ProfileInfoDiv>
-        <SearchBox>
-          <SearchContainer>
-            <SearchIcon src={'/search-icon.svg'} />
-            <SearchInput placeholder="Search or start new chat" />
-          </SearchContainer>
-        </SearchBox>
-        {contactList.map((userData, index) => (
-          <ContactComponent key={index} userData={userData} />
-        ))}
-      </Container>
-    </>
+    <Container>
+      <ProfileInfoDiv>
+        <ProfileImage src="/profile/chadhar.png" />
+        <Menu onClick={toggleMenu} />
+        {showMenu && <MenuItems setShowMenu={setShowMenu} />}
+      </ProfileInfoDiv>
+      <SearchBox>
+        <SearchContainer>
+          <SearchIcon src={'/search-icon.svg'} />
+          <SearchInput placeholder="Search or start new chat" />
+        </SearchContainer>
+      </SearchBox>
+
+      {contactList.map((contact) => (
+        <ContactItem key={contact.id} onClick={() => onContactClick(contact)}>
+          <ProfileIcon src={contact.profilePic} />
+          <ContactInfo>
+            <ContactName>{contact.name}</ContactName>
+
+            <MessageText>{contact.lastText}</MessageText>
+          </ContactInfo>
+          <MessageText>{contact.lastTextTime}</MessageText>
+        </ContactItem>
+      ))}
+    </Container>
   );
-};
+}
+
 
 export default ContactListComponent;

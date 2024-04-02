@@ -67,7 +67,7 @@ export const messagesList = [
   {
     id: 5,
     messageType: "TEXT",
-    text: "Subscribed to Simplilarn",
+    text: "Have a good day, buddy",
     senderID: 1,
     addedOn: "12:00 PM",
   },
