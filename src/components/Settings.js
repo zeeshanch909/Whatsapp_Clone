@@ -17,6 +17,7 @@ const Settings = ({ setShowSetting, setShowMenu }) => {
 
 
   const handleModal = () => {
+    console.log("theme clicked")
     setShowModal(true);
   }
 
@@ -46,7 +47,7 @@ const Settings = ({ setShowSetting, setShowMenu }) => {
           </ul>
         </div>
       </div>
-      {showModal && <Modal />}
+      {showModal && <Modal setShowModal={setShowModal} />}
     </>
   );
 };
