@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import "../styles/modal.css";
 
 const Modal = ({ setShowModal }) => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
 
   const handleOptionChange = (event) => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    const selectedTheme = event.target.value;
+    setTheme(selectedTheme); // Update the theme state first
+    localStorage.setItem("theme", selectedTheme); // Store the selected theme in localStorage
+    setShowModal(false);
   };
-
 
   const hideModal = () => {
     setShowModal(false);
